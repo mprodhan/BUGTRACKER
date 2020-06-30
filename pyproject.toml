@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "bugtracker"
+version = "0.1.0"
+description = "A bug tracking app that will allow customers and clients ts to list bugs in an app that they are using."
+authors = ["Mustafa Prodhan <mustafa.prodhan.317@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+django = "^3.0.7"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
