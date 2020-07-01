@@ -2,11 +2,6 @@ from django.db import models
 from django.utils import timezone
 from custom_user.models import BugUser
 
-NEW = "NE",
-IN_PROGRESS = "IP",
-DONE = "DO",
-INVALID = "IN"
-
 class Ticket(models.Model):
     title = models.CharField(max_length=60, null=True, blank=True)
     created_at = models.DateTimeField(timezone.now)
@@ -14,7 +9,10 @@ class Ticket(models.Model):
     username = models.ForeignKey(BugUser, on_delete=models.CASCADE,
         related_name="user_name")
 
-    
+    NEW = "NE"
+    IN_PROGRESS = "IP"
+    DONE = "DO"
+    INVALID = "IN"
 
     TICKET_STATUS_CHOICES = [
         (NEW, "new"),
