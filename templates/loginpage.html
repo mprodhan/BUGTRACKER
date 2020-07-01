@@ -1,0 +1,10 @@
+<h1>BugTracker</h1>
+<h1>Welcome to BugTracker, where we follow your request to completion.</h1>
+<h1>Please log in below to submit your ticket and we will follow.</h1>
+
+<form action="/login/" method = "POST">
+    {% csrf_token %}
+    {{form.as_p}}
+<input type="submit" value="Submit"> <span>or</span>
+<a href="/signup/">Sign up if you don't have an account</a>
+</form>
