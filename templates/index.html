@@ -1,2 +1,17 @@
-<a href="/logout/" type=Submit value="Logout">Logout</a>
 <h1>Welcome {{request.user}}</h1>
+<a href="/logout/" type=Submit value="Logout"><button>Logout</button></a>
+<a href="/ticket_create/"><button>Ticket Submission</button></a>
+
+{% for d in data %}
+
+    <p><a href="ticket_create/edit/{{d.id}}/">Ticket Number: {{d.id}}</a></p>
+    <p>{{d.ticket_status}}</p>
+    <p>{{d.title}}</p>
+    <p>{{d.bug}}</p>
+    <p>{{d.username}}</p>
+    <p>{{d.assigned_user}}</p>
+    <p>{{d.assigned_user}}</p>
+    <p>{{d.created_at}}</p>
+    <br>
+
+{% endfor %}
