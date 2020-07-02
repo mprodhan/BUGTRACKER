@@ -4,7 +4,7 @@ from custom_user.models import BugUser
 
 class Ticket(models.Model):
     title = models.CharField(max_length=60, null=True, blank=True)
-    created_at = models.DateTimeField(timezone.now)
+    created_at = models.DateTimeField(default=timezone.now)
     bug = models.TextField()
     username = models.ForeignKey(BugUser, on_delete=models.CASCADE,
         related_name="user_name")
@@ -28,9 +28,9 @@ class Ticket(models.Model):
     )
 
     assigned_user = models.ForeignKey(BugUser, on_delete=models.CASCADE,
-        related_name="assigned")
+        related_name="assigned", null=True, blank=True)
     completed_by = models.ForeignKey(BugUser, on_delete=models.CASCADE,
-        related_name="completed")
+        related_name="completed", null=True, blank=True)
 
     def __str__(self):
         return f"{self.title} - {self.bug}"

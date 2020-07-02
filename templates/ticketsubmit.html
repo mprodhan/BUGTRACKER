@@ -1,6 +1,6 @@
 <h1>Please submit your detailed request.</h1>
     <p>Our technicians will examine the request in the order that they will be recieved.</p>
-<form action="/ticket_creation/" method = "POST">
+<form action="/ticket_create/" method = "POST">
     {% csrf_token %}
     {{form.as_p}}
 <input type="submit" value="Submit"> 

@@ -1,0 +1,14 @@
+<h1>{{username}} Profile Page</h1>
+<p><h1>Tickets</h1></p>
+
+{% for d in data %}
+    <ul>
+        <p>Ticket Number: {{d.id}}</p>
+        <p>Ticket Status: {{d.ticket_status}}</p>
+        <p>Issue: {{d.title}}</p>
+        <p>Bug: {{d.bug}}</p>
+        <p>Submittted by: {{d.username}}</p>
+        <p>Date Submitted: {{d.created_at}}</p>
+        <br>
+    </ul>
+{% endfor %}
