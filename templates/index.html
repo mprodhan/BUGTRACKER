@@ -1,17 +1,78 @@
 <h1>Welcome {{request.user}}</h1>
 <a href="/logout/" type=Submit value="Logout"><button>Logout</button></a>
 <a href="/ticket_create/"><button>Ticket Submission</button></a>
+<!-- <a href="/profile/{{buguser.id}}/">Profile</a> -->
 
+
+<h1>New Tickets</h1>
 {% for d in data %}
 
-    <p><a href="ticket_create/edit/{{d.id}}/">Ticket Number: {{d.id}}</a></p>
+    <p><a href="/ticket_create/edit/{{d.id}}/"><button>Edit</button></a></p>
+    <p><strong>Ticket Number:</strong> {{d.id}}</p>
+    <p>Ticket Status: {{d.ticket_status}}</p>
+    <p>Title: {{d.title}}</p>
+    <p>Issue: {{d.bug}}</p>
+    <p>Ticket Submitted by: {{d.username}}</p>
+    <p>Assigned by: {{d.assigned_user}}</p>
+    <p>Ticket submitted on: {{d.created_at}}</p>
+    <p>Ticket completed by: {{d.completed_by}}</p>
+    <a href="/in_progress/{{d.id}}/"><button>In_Progress</button></a>
+    <a href="/done/{{d.id}}/"><button>Done</button></a>
+    <a href="/invalid/{{d.id}}/"><button>Invalid</button></a>
+    <br>
+
+{% endfor %}
+
+<h1>In Progress</h1>
+{% for d in assigned %}
+
+    <p><a href="/ticket_create/edit/{{d.id}}/">Ticket Number: {{d.id}}</a></p>
     <p>{{d.ticket_status}}</p>
     <p>{{d.title}}</p>
     <p>{{d.bug}}</p>
     <p>{{d.username}}</p>
     <p>{{d.assigned_user}}</p>
+    <p>{{d.created_at}}</p>
+    <p>{{d.completed_by}}</p>
+    <a href="/in_progress/{{d.id}}/"><button>In_Progress</button></a>
+    <a href="/done/{{d.id}}/"><button>Done</button></a>
+    <a href="/invalid/{{d.id}}/"><button>Invalid</button></a>
+    <br>
+
+{% endfor %}
+
+<h1>Completed</h1>
+{% for d in done %}
+
+    <p><a href="/ticket_create/edit/{{d.id}}/">Ticket Number: {{d.id}}</a></p>
+    <p>{{d.ticket_status}}</p>
+    <p>{{d.title}}</p>
+    <p>{{d.bug}}</p>
+    <p>{{d.username}}</p>
     <p>{{d.assigned_user}}</p>
     <p>{{d.created_at}}</p>
+    <p>{{d.completed_by}}</p>
+    <a href="/in_progress/{{d.id}}/"><button>In_Progress</button></a>
+    <a href="/done/{{d.id}}/"><button>Done</button></a>
+    <a href="/invalid/{{d.id}}/"><button>Invalid</button></a>
+    <br>
+
+{% endfor %}
+
+<h1>Invalid</h1>
+{% for d in invalid %}
+
+    <p><a href="/ticket_create/edit/{{d.id}}/">Ticket Number: {{d.id}}</a></p>
+    <p>{{d.ticket_status}}</p>
+    <p>{{d.title}}</p>
+    <p>{{d.bug}}</p>
+    <p>{{d.username}}</p>
+    <p>{{d.assigned_user}}</p>
+    <p>{{d.created_at}}</p>
+    <p>{{d.completed_by}}</p>
+    <a href="/in_progress/{{d.id}}/"><button>In_Progress</button></a>
+    <a href="/done/{{d.id}}/"><button>Done</button></a>
+    <a href="/invalid/{{d.id}}/"><button>Invalid</button></a>
     <br>
 
 {% endfor %}

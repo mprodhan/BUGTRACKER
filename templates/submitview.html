@@ -1,7 +1,11 @@
 <h1>Thank you for submitting your ticket request {{request.user}}</h1>
+<a href="/">Home</a>
+<a href="/logout/"><button>Logout</button></a>
 
 <ul>
 
+    <p><a href="/ticket_create/edit/{{data.id}}/"><button>Edit</button></a></p>
+    <p>Ticket Number: {{data.id}}</p>
     <p>Ticket Status: {{data.ticket_status}}</p>
     <p>Issue: {{data.title}}</p>
     <p>Bug: {{data.bug}}</p>
