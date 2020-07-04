@@ -2,6 +2,7 @@ from django.shortcuts import render, reverse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from authentication.forms import LoginForm, SignUpForm
 from custom_user.models import BugUser
+from django.contrib.admin.views.decorators import staff_member_required
 
 def loginview(request):
     if request.method == "POST":
@@ -22,6 +23,7 @@ def logoutview(request):
     logout(request)
     return HttpResponseRedirect(reverse("loginpage"))
 
+@staff_member_required
 def signupview(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
