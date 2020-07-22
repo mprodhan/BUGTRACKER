@@ -1,2 +1,4 @@
 __pycache__
 poetry.lock
+bugtracker.egg-info
+db.sqlite3
